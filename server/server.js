@@ -94,35 +94,41 @@ app.get('/', async (req, res) => {
 
 // Updates all missing fields of questions & answers in advance
 app.get('/update_missing_fields', async (req, res) => {
-  // Questions:
-  let collectionOfQuestions = await db.collection('questions').find({}).toArray()
-  for (let i = 0; i < collectionOfQuestions.length; i++) {
-    let id = new mongoose.Types.ObjectId(collectionOfQuestions[i]._id)
-    if (collectionOfQuestions[i].views === undefined) {
-      await db.collection('questions').updateOne({_id: id}, {"$set": {views: 0}})
+    try {
+      // Update missing fields in questions
+      await db.collection('questions').updateMany(
+        { views: { $exists: false } },
+        { $set: { views: 0 } }
+      );
+  
+      await db.collection('questions').updateMany(
+        { asked_by: { $exists: false } },
+        { $set: { asked_by: 'Anonymous' } }
+      );
+  
+      await db.collection('questions').updateMany(
+        { ask_date_time: { $exists: false } },
+        { $set: { ask_date_time: new Date() } }
+      );
+  
+      // Update missing fields in answers
+      await db.collection('answers').updateMany(
+        { ans_by: { $exists: false } },
+        { $set: { ans_by: 'Anonymous' } }
+      );
+  
+      await db.collection('answers').updateMany(
+        { ans_date_time: { $exists: false } },
+        { $set: { ans_date_time: new Date() } }
+      );
+  
+      res.send("Fields updated");
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Internal Server Error");
     }
-    if (collectionOfQuestions[i].asked_by === undefined) {
-      await db.collection('questions').updateOne({_id: id}, {"$set": {asked_by: 'Anonymous'}})
-    }
-    if (collectionOfQuestions[i].ask_date_time === undefined) {
-      await db.collection('questions').updateOne({_id: id}, {"$set": {ask_date_time: new Date()}})
-    }
-  }
-
-  // Answers:
-  let collectionOfAnswers = await db.collection('answers').find({}).toArray()
-  for (let i = 0; i < collectionOfAnswers.length; i++) {
-    let id = new mongoose.Types.ObjectId(collectionOfAnswers[i]._id)
-    if (collectionOfAnswers[i].ans_by === undefined) {
-      await db.collection('answers').updateOne({_id: id}, {"$set": {ans_by: 'Anonymous'}})
-    }
-    if (collectionOfAnswers[i].ans_date_time === undefined) {
-      await db.collection('answers').updateOne({_id: id}, {"$set": {ans_date_time: new Date()}})
-    }
-  }
-
-  res.send("Done")
-})
+  });
+  
 
 // Returns all questions depending on user request
 app.get('/questions', async (req, res) => {
