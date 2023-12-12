@@ -1,12 +1,30 @@
-// ************** THIS IS YOUR APP'S ENTRY POINT. CHANGE THIS FILE AS NEEDED. **************
-// ************** DEFINE YOUR REACT COMPONENTS in ./components directory **************
+import React, { useState } from "react";
 import './stylesheets/App.css';
-import FakeStackOverflow from './components/fakestackoverflow.js'
+import LoginPage from './components/login';
+import FakeStackOverflow from './components/fakestackoverflow';
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [username, setUsername] = useState('');
+
+  const handleLogin = (event, name) => {
+    event.preventDefault();
+    setUsername(name);
+    setLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    setLoggedIn(false);
+    setUsername('');
+  };
+
+  if (!loggedIn) {
+    return <LoginPage onLogin={handleLogin} />;
+  }
+
   return (
     <section className="fakeso">
-      <FakeStackOverflow />
+      <FakeStackOverflow username={username} onLogout={handleLogout} />
     </section>
   );
 }
