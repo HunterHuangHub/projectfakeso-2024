@@ -3,6 +3,7 @@ import { Components, UserTypes, QuestionTypes, sortAnswers, getTagsByIds, getTim
 import { fetchAnswers, fetchTags } from './apiservice.js'
 import axios from 'axios'
 
+// Answers Page
 export default function AnswersPage ({ stateInfo }) {
   const [currentAnswers, setCurrentAnswers] = useState([])
   const [currentTags, setCurrentTags] = useState([])
