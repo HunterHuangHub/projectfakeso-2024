@@ -1,1 +1,599 @@
 /* Add your CSS here */
+body {
+    margin: 0px;
+}
+
+/* CSS Variables */
+:root {
+    --font-main: sans-serif;
+    --color-highlight: Highlight;
+    --color-background: #D1D2D2;
+    --color-sidebar: #ffffff;
+    --padding-link: 10px 16px;
+}
+
+/* Layout */
+#main {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+
+#side-bar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 15%;
+    background-color: var(--color-sidebar);
+}
+
+/* Header */
+#main-page-header {
+    border: 1px solid #000000;
+    background-color: var(--color-background);
+    text-align: center;
+}
+
+#main-page-header-text {
+    display: inline-block;
+    padding: 2%;
+    font-weight: bolder;
+    font-family: var(--font-main);
+    font-size: 200%;
+}
+
+/* Search Bar */
+#search-bar {
+    display: inline-block;
+    position: absolute;
+    right: 5%;
+    padding: 2%;
+}
+
+#search-box {
+    height: 35px;
+    width: 200px;
+    font-size: 120%;
+}
+
+/* Links */
+.link {
+    border-radius: 15px;
+    padding: var(--padding-link);
+    cursor: pointer;
+}
+
+#questions-link {
+    background-color: lightgray;
+}
+
+#logout-link {
+    cursor: pointer;
+}
+
+/* Side Bar */
+#side-bar div {
+    padding-top: 30%;
+    text-align: center;
+}
+
+#side-bar span {
+    text-decoration: none;
+    color: var(--color-highlight);
+    font-size: 170%;
+}
+
+/* Vertical Lines */
+#vertical-line {
+    border-left: 1px dotted black;
+}
+
+.questions-vertical-line {
+    height: 198px;
+}
+
+.answers-vertical-line {
+    height: 407px;
+}
+
+.full {
+    height: 600px;
+}
+
+/* Questions Page */
+#questions-page {
+    width: 100%;
+}
+
+/* Row 1 */
+#questions-page-row1 {
+    margin-top: 3%;
+    margin-left: 50px;
+}
+
+#all-questions-text {
+    font-weight: bold;
+    font-size: 250%;
+    width: 40%;
+}
+
+#questions-page-ask-question-button {
+    width: 100px;
+    height: 50px;
+    background-color: var(--color-highlight); /* Updated */
+    color: white;
+    border: 2px solid black;
+    margin-left: 50%;
+    cursor: pointer;
+}
+
+/* Row 2 */
+#questions-page-row2 {
+    margin-top: 5%;
+    margin-left: 50px;
+}
+
+#total-num-questions {
+    font-size: 150%;
+}
+
+#questions-filter {
+    margin-left: 380px;
+    background-color: orange;
+}
+
+#questions-filter button:not(:last-child) {
+    border-right: none;
+}
+
+#questions-filter button {
+    width: 100px;
+    background: none;
+    cursor: pointer;
+}
+
+/* No Questions Found */
+#no-questions-text {
+    font-size: 40px;
+    text-align: center;
+    margin-top: 10%;
+}
+
+/* Question Rows */
+#questions-table {
+    margin-top: 3%;
+    border-top: 1px dotted black;
+    width: 1100px;
+}
+
+.question-table-row {
+    height: 150px;
+}
+
+/* Col 1 */
+.question-table-col1 {
+    width: 15%;
+    text-align: center;
+    border-bottom: 1px dotted black;
+    border-left: 1px dotted black;
+}
+
+.number-of-reputation-and-answers-and-views {
+    color: #656266;
+}
+
+/* Col 2 */
+.question-table-col2 {
+    width: 60%;
+    border-bottom: 1px dotted black;
+}
+
+.question-title {
+    font-size: 18px;
+    cursor: pointer;
+    color: blue;
+}
+
+.question-summary {
+    font-size: 12px;
+    width: 100px;
+}
+
+.question-tags {
+    background-color: #656266;
+    color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 5px;
+    margin-left: 1%;
+}
+
+/* Col 3 */
+.question-table-col3 {
+    border-bottom: 1px dotted black;
+}
+
+.question-time {
+    color: #656266;
+}
+
+.page-buttons {
+    padding-top: 2%;
+    font-size: 30px;
+}
+
+/* Prev and next buttons */
+#prev-button, #next-button {
+    cursor: pointer;
+}
+
+#next-button {
+    margin-left: 95%;
+}
+
+.disabled {
+    opacity: 0.2;
+}
+
+/* Post Question Page */
+#post-question-page div {
+    padding-left: 100px;
+}
+
+.post-question-headers {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 2%;
+}
+
+.post-question-captions {
+    font-size: 15px;
+    font-style: italic;
+    margin-top: 1%;
+    margin-left: 3%;
+}
+
+.post-question-input {
+    margin-top: 1%;
+}
+
+.post-question-input-box, .post-question-textarea-box {
+    font-size: 20px;
+    width: 800px;
+}
+
+.post-question-textarea-box {
+    height: 120px;
+}
+
+#post-question-button, #delete-question-button {
+    margin-top: 5%;
+    width: 100px;
+    height: 50px;
+    background-color: var(--color-highlight); /* Updated */
+    color: white;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+#delete-question-button {
+    width: 120px;
+    margin-left: 70%;
+}
+
+/* Answers Page */
+#answers-page {
+    width: 80%;
+}
+
+/* Common Styles for Rows */
+.answers-page-row {
+    margin-left: 2%;
+    width: 100%;
+}
+
+/* Row 1 */
+#answers-page-row1 {
+    margin-top: 2%;
+    font-weight: bold;
+    height: 55px;
+}
+
+#answers-page-title {
+    margin-left: 8%;
+    display: inline-block;
+    width: 50%;
+}
+
+#answers-page-ask-question-button {
+    width: 100px;
+    height: 50px;
+    background-color: var(--color-highlight); /* Updated */
+    color: white;
+    border: 2px solid black;
+    margin-left: 75%;
+    cursor: pointer;
+}
+
+/* Row 2 */
+#answers-page-row2 {
+    margin-top: 5%;
+    height: 40px;
+}
+
+#answers-page-reputation, #answers-page-num-views {
+    font-weight: bold;
+}
+
+#answers-page-tags {
+    margin-left: 5%;
+}
+
+/* Row 3 */
+#upvote-button, #downvote-button {
+    margin-left: 4.5%;
+    cursor: pointer;
+}
+
+#downvote-button {
+    margin-left: 1%;
+}
+
+/* Row 4 */
+#answers-page-row4 {
+    margin-top: 5%;
+    height: 140px;
+}
+
+#answers-page-text {
+    margin-left: 8%;
+    width: 50%;
+    display: inline-block;
+}
+
+#answers-page-user-asked {
+    margin-left: 10%;
+    color: #656266;
+}
+
+/* Answer Rows */
+#answers-table {
+    margin-top: 3%;
+    border-top: 1px dotted black;
+    width: 1100px;
+    border-left: 1px dotted black;
+}
+
+.answers-table-row {
+    margin-top: 1%;
+    height: 100px;
+}
+
+/* Columns */
+.answers-table-col1, .answers-table-col2 {
+    padding-left: 2%;
+    border-bottom: 1px dotted black;
+}
+
+.answers-table-col1 {
+    width: 70%;
+}
+
+.answers-table-col span {
+    margin-left: 3%;
+}
+
+.answers-table-answer-post-date {
+    color: #656266;
+}
+
+/* Button */
+#answers-page-answer-question-button {
+    width: 100px;
+    height: 50px;
+    background-color: var(--color-highlight); /* Updated */
+    color: white;
+    border: 2px solid black;
+    margin-top: 2%;
+    margin-left: 2%;
+    cursor: pointer;
+}
+
+/* Post Answer Page */
+
+#post-answer-page {
+    margin-left:5%;
+}
+
+#post-answer-page div {
+    padding-left:20px;
+}
+
+#post-answer-text-input-box {
+    height:250px;
+}
+
+#post-answer-button {
+    margin-top:8%;
+    margin-left:2%;
+    width:100px;
+    height:50px;
+    background-color: #00A3FF;
+    color:white;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+/* Tags Page */
+#tags-page {
+    width: 100%;
+}
+
+#tags-page-row1 {
+    margin-top: 3%;
+    margin-left: 50px;
+}
+
+#num-of-tags, #all-tags-text {
+    font-weight: bold;
+    font-size: 250%;
+    width: 40%;
+}
+
+#all-tags-text {
+    margin-left: 30%;
+}
+
+/* Ask Question Button */
+#tags-page-ask-question-button {
+    width: 100px;
+    height: 50px;
+    background-color: var(--color-highlight); /* Updated */
+    color: white;
+    border: 2px solid black;
+    margin-left: 30%;
+    cursor: pointer;
+}
+
+/* Grid Layout for Tags */
+.grid-container {
+    display: grid;
+    gap: 50px 100px;
+    grid-template-columns: repeat(3, 20%);
+    padding: 100px;
+}
+  
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px dotted rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.tag-button {
+    cursor: pointer;
+    color: rgb(0, 0, 175);
+    text-decoration: underline;
+}
+
+/* Common Button Styles */
+.btn, #tags-page-ask-question-button, .login-box button[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--color-highlight); /* Updated */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+    border-radius: 5px;
+}
+
+.btn:hover, .login-box button[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+/* Centered Layout */
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+}
+
+/* Typography */
+.h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+/* Login Box */
+.login-box {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f7f7f7;
+    margin: 20px auto;
+}
+
+.login-box label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.login-box input[type="text"], .login-box input[type="password"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+/* Profile Page */
+#user-registration-and-rep {
+    margin-top: 20px;
+    width: 950px;
+}
+
+#user-registration-date, #user-reputation {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#user-reputation {
+    margin-left: 45%;
+}
+
+.user-profile {
+    text-align: center;
+}
+
+/* Lists */
+.question-list, .tag-list, .answered-question-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.question-list li, .answered-question-list li {
+    margin-bottom: 10px;
+}
+
+.question-list li span, .answered-question-list li a {
+    font-size: 20px;
+    color: var(--color-highlight); /* Updated */
+    cursor: pointer;
+}
+
+.tag-list li {
+    margin-bottom: 10px;
+}
+
+/* Tags */
+.tag {
+    display: inline-block;
+    background-color: var(--color-highlight); /* Updated */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.tag-list li button {
+    margin-left: 10px;
+}
+
+/* Answers */
+.answer, .other-answers {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.other-answers {
+    background-color: #f1f3f5; 
+}
