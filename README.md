@@ -1,7 +1,7 @@
 # Fake Stack Overflow 
 
 ## Overview
-This project is a full-stack web application designed to mimic the core functionalities of a forum website, such as Stack Overflow. The website implementation utilizes a combination of front-end and back-end technologies to create a feature-rich platform for users to ask questions, provide answers, and interact with other users. Originally designated as a two-person assignment for a course, I took on the responsibilities of both roles, managing the both the front-end and back-end development of the website.
+This project is a full-stack web application designed to mimic the core functionalities of a forum website, such as Stack Overflow. The website implementation utilizes a combination of front-end and back-end technologies to create a feature-rich platform for users to ask questions, provide answers, and interact with other users. Originally designated as a two-person assignment for a course, I took on the responsibilities of both roles, managing both the front-end and back-end development of the website.
 
 In 2024, the project was expanded and revamped with bug fixes, more professional website capabilities, and sleeker UI design.
 
