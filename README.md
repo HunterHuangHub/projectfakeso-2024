@@ -43,24 +43,32 @@ Gracefully shuts down the server and disconnects the database during interruptio
     cd <repository-name>
 ```
 2. Install Dependencies:
+    Navigate to the server directory and install server-side dependencies
 ```bash
+    cd server
     npm install
 ```
 3. Run MongoDB Locally:
     Ensure MongoDB is running on your system.
     Default connection string: mongodb://127.0.0.1:27017/fake_so.
 4. Start the Application:
+    Run the Server
 ```bash
     node server.js
 ```
+    The server will run on http://localhost:8000 by default.
 5. Run Front-End (React):
     Navigate to the front-end directory.
-    Install dependencies and start:
-```bash
-    cd client
+    Install dependencies and start the React development server:
+```bash 
+    cd ../client
     npm install
     npm start
 ```
+    The front-end will run on http://localhost:3000 by default.
+6. Access the Application:
+    Visit the front-end at http://localhost:3000.
+    The front-end communicates with the back-end API running at http://localhost:8000.
 
 ## Technology Stack
 - **Frontend**: React, Axios, HTML, CSS, JavaScript
